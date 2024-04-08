@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<span class="text">Stay Up to date with the current weather</span>
+<div class="flex">
+    <div class="card">
+        <form action="/submit" method="post">
+            <input type="text" name='city' placeholder="Enter your city">
+            <button type="submit" class="go">GO</button>
+        </form>
+    </div>
+    <div class="card2">
+        <% if(locals.latitude && locals.longitude){%>
+        <p>
+            latitude: <%= latitude %>
+            longitude :<%= longitude %>
+            <% if(locals.temp){%>
+                Temp:<%= temp %>
+            <% } %>
+        </p>
+        <% } %>
+    </div>
+</div>
+
